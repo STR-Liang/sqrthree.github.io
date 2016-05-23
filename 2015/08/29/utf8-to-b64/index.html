@@ -28,7 +28,7 @@
   
     <link rel="icon" href="/favicon.png">
   
-  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
@@ -80,13 +80,13 @@
 				<div class="tips-box hide">
 					<div class="tips-arrow"></div>
 					<ul class="tips-inner">
-						<li>菜单</li>
-						<li>標籤</li>
+						<li>Menu</li>
+						<li>Tags</li>
 						
-						<li>友情链接</li>
+						<li>Links</li>
 						
 						
-						<li>關於</li>
+						<li>A propos</li>
 						
 					</ul>
 				</div>
@@ -250,16 +250,16 @@
 <a id="more"></a>
 <h2 id="window-btoa-与-window-atob-不支持中文"><a href="#window-btoa-与-window-atob-不支持中文" class="headerlink" title="window.btoa 与 window.atob 不支持中文"></a>window.btoa 与 window.atob 不支持中文</h2><p>但是这种方法存在的问题是:<code>window.btoa()</code> 不支持中文, <code>window.atob()</code>转换含有中文的 base64编码的时候中文部分会变为乱码.详情如下:</p>
 <p>我们在 bash 终端下先得到『中文』这两个字的 base64 编码</p>
-<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ echo 中文 <span class="string">| base64</span></span><br><span class="line"><span class="number">5</span>Lit5paHCg==</span><br></pre></td></tr></table></figure>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">$ echo 中文 <span class="string">| base64</span></span><br><span class="line"><span class="number">5</span>Lit5paHCg==</span><br></pre></td></tr></table></figure>
 <p>然后我们在 Chrome console 里面通过 <code>window.atob</code> 进行解码, 结果如下</p>
 <figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="built_in">window</span>.atob(<span class="string">'5Lit5paHCg=='</span>)</span><br><span class="line">&lt; <span class="string">"ä¸­æ</span><br><span class="line">"</span></span><br></pre></td></tr></table></figure>
 <p>继续在 Chrome console 里面执行 <code>window.btoa</code> 编码, 结果报错.</p>
-<figure class="highlight smali"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;<span class="function"> window.btoa(</span>'中文'<span class="function">)</span>;</span><br><span class="line">&lt; Uncaught DOMException: Failed to<span class="instruction"> execute </span>'btoa' on 'Window': The string to be encoded contains characters outside of the Latin1 range.</span><br></pre></td></tr></table></figure>
+<figure class="highlight smali"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; window.btoa('中文');</span><br><span class="line">&lt; Uncaught DOMException: Failed to<span class="built_in"> execute </span>'btoa' on 'Window': The string to be encoded contains characters outside of the Latin1 range.</span><br></pre></td></tr></table></figure>
 <p>经查资料发现, <code>btoa</code> 方法仅支持 ASCII 编码.</p>
 <h2 id="借助-encodeURIComponent-和-decodeURIComponent-转义中文字符"><a href="#借助-encodeURIComponent-和-decodeURIComponent-转义中文字符" class="headerlink" title="借助 encodeURIComponent 和 decodeURIComponent 转义中文字符"></a>借助 encodeURIComponent 和 decodeURIComponent 转义中文字符</h2><p>由于<code>btoa</code> 方法仅支持 ASCII 编码, 我们在转换中文的时候就需要先将中文转换为ASCII字符序列，再通过 btoa 进行 base64 编码, 从而实现『曲线救国』。</p>
 <p>转换ASCII字符序列的方法我们可以借助于 <code>encodeURIComponent</code> 和 <code>decodeURIComponent</code> 这两个方法完成. </p>
-<p>编码:<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; window.<span class="function"><span class="title">btoa</span><span class="params">(encodeURIComponent(<span class="string">'中文'</span>)</span></span>)</span><br><span class="line">&lt; <span class="string">"JUU0JUI4JUFEJUU2JTk2JTg3"</span></span><br></pre></td></tr></table></figure></p>
-<p>解码:<br><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; decodeURIComponent<span class="list">(<span class="keyword">window</span>.atob<span class="list">(<span class="quoted">'JUU0JUI4JUFEJUU2JTk2JTg3</span>')</span>)</span></span><br><span class="line">&lt; <span class="string">"中文"</span></span><br></pre></td></tr></table></figure></p>
+<p>编码:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; <span class="built_in">window</span>.btoa(<span class="built_in">encodeURIComponent</span>(<span class="string">'中文'</span>))</span><br><span class="line">&lt; <span class="string">"JUU0JUI4JUFEJUU2JTk2JTg3"</span></span><br></pre></td></tr></table></figure></p>
+<p>解码:<br><figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; decodeURIComponent(<span class="name">window</span>.atob('JUU0JUI4JUFEJUU2JTk2JTg3'))</span><br><span class="line">&lt; <span class="string">"中文"</span></span><br></pre></td></tr></table></figure></p>
 <h2 id="GitHub-API-获取-README-的中文乱码问题"><a href="#GitHub-API-获取-README-的中文乱码问题" class="headerlink" title="GitHub API 获取 README 的中文乱码问题"></a>GitHub API 获取 README 的中文乱码问题</h2><p>但是通过上面的解码方式解码 github 的 readme 数据的时候仍旧是乱码, 经过查找相关资料发现了Base64的编码与解码转的最优方案是下面这种:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">utf8_to_b64</span>(<span class="params">str</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">window</span>.btoa(<span class="built_in">unescape</span>(<span class="built_in">encodeURIComponent</span>(str)));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">b64_to_utf8</span>(<span class="params">str</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">decodeURIComponent</span>(<span class="built_in">escape</span>(<span class="built_in">window</span>.atob(str)));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Usage:</span></span><br><span class="line">utf8_to_b64(<span class="string">'✓ à la mode'</span>); <span class="comment">// JTI1dTI3MTMlMjUyMCUyNUUwJTI1MjBsYSUyNTIwbW9kZQ==</span></span><br><span class="line">b64_to_utf8(<span class="string">'JTI1dTI3MTMlMjUyMCUyNUUwJTI1MjBsYSUyNTIwbW9kZQ=='</span>); <span class="comment">// "✓ à la mode"</span></span><br><span class="line"></span><br><span class="line">utf8_to_b64(<span class="string">'I \u2661 Unicode!'</span>); <span class="comment">// SSUyNTIwJTI1dTI2NjElMjUyMFVuaWNvZGUlMjUyMQ==</span></span><br><span class="line">b64_to_utf8(<span class="string">'SSUyNTIwJTI1dTI2NjElMjUyMFVuaWNvZGUlMjUyMQ=='</span>); <span class="comment">// "I ♡ Unicode!"</span></span><br></pre></td></tr></table></figure>
 <p>通过上面的这种方法去解析 github 的数据的时候, 发现中文能够正常显示了. 显然 github 也是采用了这种方案.</p>
@@ -302,7 +302,7 @@
     <div class="share_jia">
     	<!-- JiaThis Button BEGIN -->
     	<div class="jiathis_style">
-    		<span class="jiathis_txt">分享到: &nbsp; </span>
+    		<span class="jiathis_txt">Share to: &nbsp; </span>
     		<a class="jiathis_button_facebook"></a>
             <a class="jiathis_button_twitter"></a>
             <a class="jiathis_button_plus"></a>
@@ -358,7 +358,7 @@
 
     </div>
     
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
 
 
 <script>
@@ -374,8 +374,8 @@
 		open_in_new: false
 	}
 </script>
-<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
-<script src="/js/main.js" type="text/javascript"></script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
 
 
 
