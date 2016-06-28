@@ -1,245 +1,78 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>聊聊 JS 中的严格模式 | sqrtthree</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="什么是严格模式？
-严格模式 是 ECMAScript 5 中引入的一种将更好的错误检查引入代码中的方法, 现在已经被大多浏览器实现. 顾名思义，这种模式使得Javascript在更严格的条件下运行.">
-<meta property="og:type" content="article">
-<meta property="og:title" content="聊聊 JS 中的严格模式">
-<meta property="og:url" content="http://blog.sqrtthree.com/2015/10/09/strict-mode/index.html">
-<meta property="og:site_name" content="sqrtthree">
-<meta property="og:description" content="什么是严格模式？
-严格模式 是 ECMAScript 5 中引入的一种将更好的错误检查引入代码中的方法, 现在已经被大多浏览器实现. 顾名思义，这种模式使得Javascript在更严格的条件下运行.">
-<meta property="og:updated_time" content="2015-10-09T04:05:12.000Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="聊聊 JS 中的严格模式">
-<meta name="twitter:description" content="什么是严格模式？
-严格模式 是 ECMAScript 5 中引入的一种将更好的错误检查引入代码中的方法, 现在已经被大多浏览器实现. 顾名思义，这种模式使得Javascript在更严格的条件下运行.">
-  
-    <link rel="alternative" href="/atom.xml" title="sqrtthree" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  <link rel="stylesheet" href="/css/style.css">
-</head>
-
-<body>
-  <div id="container">
-    <div class="left-col">
-    <div class="overlay"></div>
-<div class="intrude-less">
-	<header id="header" class="inner">
-		<a href="/2015/06/27/hello-world/" class="profilepic">
-			
-			<img lazy-src="/img/author.jpg" class="js-avatar">
-			
-		</a>
-
-		<hgroup>
-		  <h1 class="header-author"><a href="/2015/06/27/hello-world/">sqrtthree</a></h1>
-		</hgroup>
-
-		
-		<p class="header-subtitle">O ever youthful, O ever weeping.</p>
-		
-
-		
-			<div class="switch-btn">
-				<div class="icon">
-					<div class="icon-ctn">
-						<div class="icon-wrap icon-house" data-idx="0">
-							<div class="birdhouse"></div>
-							<div class="birdhouse_holes"></div>
-						</div>
-						<div class="icon-wrap icon-ribbon hide" data-idx="1">
-							<div class="ribbon"></div>
-						</div>
-						
-						<div class="icon-wrap icon-link hide" data-idx="2">
-							<div class="loopback_l"></div>
-							<div class="loopback_r"></div>
-						</div>
-						
-						
-						<div class="icon-wrap icon-me hide" data-idx="3">
-							<div class="user"></div>
-							<div class="shoulder"></div>
-						</div>
-						
-					</div>
-					
-				</div>
-				<div class="tips-box hide">
-					<div class="tips-arrow"></div>
-					<ul class="tips-inner">
-						<li>Menu</li>
-						<li>Tags</li>
-						
-						<li>Links</li>
-						
-						
-						<li>Über</li>
-						
-					</ul>
-				</div>
-			</div>
-		
-
-		<div class="switch-area">
-			<div class="switch-wrap">
-				<section class="switch-part switch-part1">
-					<nav class="header-menu">
-						<ul>
-						
-							<li><a href="/">主页</a></li>
-				        
-							<li><a href="/archives">所有文章</a></li>
-				        
-							<li><a href="/instagram">相册</a></li>
-				        
-						</ul>
-					</nav>
-					<nav class="header-nav">
-						<div class="social">
-							
-								<a class="github" target="_blank" href="https://github.com/sqrthree" title="github">github</a>
-					        
-								<a class="twitter" target="_blank" href="https://twitter.com/sqrtthree" title="twitter">twitter</a>
-					        
-								<a class="weibo" target="_blank" href="http://weibo.com/sqrtthree" title="weibo">weibo</a>
-					        
-								<a class="mail" target="_blank" href="mailto:sqrtthree@foxmail.com" title="mail">mail</a>
-					        
-								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
-					        
-						</div>
-					</nav>
-				</section>
-				
-				
-				<section class="switch-part switch-part2">
-					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/api/" style="font-size: 10px;">api</a> <a href="/tags/jQuery3-0/" style="font-size: 13.33px;">jQuery3.0</a> <a href="/tags/jade/" style="font-size: 16.67px;">jade</a> <a href="/tags/myCodeWars/" style="font-size: 10px;">myCodeWars</a> <a href="/tags/工具/" style="font-size: 10px;">工具</a> <a href="/tags/服务器部署/" style="font-size: 16.67px;">服务器部署</a> <a href="/tags/译文/" style="font-size: 20px;">译文</a> <a href="/tags/资源/" style="font-size: 10px;">资源</a>
-					</div>
-				</section>
-				
-				
-				
-				<section class="switch-part switch-part3">
-					<div id="js-friends">
-					
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://sqrt3.sinaapp.com/">My Web</a>
-			        
-			        </div>
-				</section>
-				
-
-				
-				
-				<section class="switch-part switch-part4">
-				
-					<div id="js-aboutme">I&#39;m a Front-End developer in everywhere, now living in ZhengZhou, China. I&#39;m ❤ programming &amp; Front-end design.<a href="/2015/06/27/hello-world/">&nbsp;&nbsp;&nbsp;Click me.</a></div>
-				</section>
-				
-			</div>
-		</div>
-	</header>				
-</div>
-
-    </div>
-    <div class="mid-col">
-      <nav id="mobile-nav">
-  	<div class="overlay">
-  		<div class="slider-trigger"></div>
-  		<h1 class="header-author js-mobile-header hide">sqrtthree</h1>
-  	</div>
-	<div class="intrude-less">
-		<header id="header" class="inner">
-			<div class="profilepic">
-			
-				<img lazy-src="/img/author.jpg" class="js-avatar">
-			
-			</div>
-			<hgroup>
-			  <h1 class="header-author">sqrtthree</h1>
-			</hgroup>
-			
-			<p class="header-subtitle">O ever youthful, O ever weeping.</p>
-			
-			<nav class="header-menu">
-				<ul>
-				
-					<li><a href="/">主页</a></li>
-		        
-					<li><a href="/archives">所有文章</a></li>
-		        
-					<li><a href="/instagram">相册</a></li>
-		        
-		        <div class="clearfix"></div>
-				</ul>
-			</nav>
-			<nav class="header-nav">
-				<div class="social">
-					
-						<a class="github" target="_blank" href="https://github.com/sqrthree" title="github">github</a>
-			        
-						<a class="twitter" target="_blank" href="https://twitter.com/sqrtthree" title="twitter">twitter</a>
-			        
-						<a class="weibo" target="_blank" href="http://weibo.com/sqrtthree" title="weibo">weibo</a>
-			        
-						<a class="mail" target="_blank" href="mailto:sqrtthree@foxmail.com" title="mail">mail</a>
-			        
-						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
-			        
-				</div>
-			</nav>
-		</header>				
-	</div>
+<html lang="zh-cmn-Hans">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="前端开发者, 擅长各项前端技能，深入研究移动端开发与前端性能, 对 Nodejs 后端开发略有涉及。此为博客一枚.">
+    <meta name="keyword"  content="前端 前端工程师 HTML5 CSS3 Javascript Node.js">
+		<title>
+      
+        聊聊 JS 中的严格模式 - sqrtthree
+      
+    </title>
+    <link rel="shortcut icon" href="https://assets-cdn.github.com/favicon.ico">
+    <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//cdn.staticfile.org/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/dist/styles/index.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-light navbar-fixed-top navbar-custom">
+  <div class="clearfix">
+    <button class="navbar-toggler pull-right hidden-sm-up" type="button" data-toggle="collapse" data-target="#main-nav">&#9776;</button>
+    <a class="navbar-brand hidden-sm-up" href="/">sqrtthree</a>
+  </div>
+  <div id="main-nav" class="collapse navbar-toggleable-xs in">
+    <a class="navbar-brand hidden-sm-down" href="/">sqrtthree</a>
+    <ul class="nav navbar-nav navbar-right text-uppercase hidden-sm-down">
+      
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/tags/">Tags</a>
+          </li>
+          
+      
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/categories/">categories</a>
+          </li>
+          
+      
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/about/">about</a>
+          </li>
+          
+      
+    </ul>
+  </div>
 </nav>
 
-      <div class="body-wrap"><article id="post-strict-mode" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/10/09/strict-mode/" class="article-date">
-  	<time datetime="2015-10-09T04:05:12.000Z" itemprop="datePublished">2015-10-09</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+    <header class="intro-header" style="background-image: url('/dist/images/post-bg.jpg')">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
         
-  
-    <h1 class="article-title" itemprop="name">
-      聊聊 JS 中的严格模式
-    </h1>
-  
-
-      </header>
-      
-      <div class="article-info article-info-post">
+          <div class="post-heading">
+              <div class="tags ghost-tags">
+                
+              </div>
+              <h1>聊聊 JS 中的严格模式</h1>
+              
+              <span class="meta">Posted by sqrtthree on Oct 9, 2015</span>
+          </div>
         
-        
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/技术/">技术</a>
-	</div>
-
-
-        <div class="clearfix"></div>
       </div>
+    </div>
+  </div>
+</header>
+<article>
+  <div class="container">
+    <div class="row">
       
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="什么是严格模式？"><a href="#什么是严格模式？" class="headerlink" title="什么是严格模式？"></a>什么是严格模式？</h2><blockquote>
+        <div id="markdown-container" class="col-md-10 col-md-offset-1">
+          <div class="markdown-body">
+            <h2 id="什么是严格模式？"><a href="#什么是严格模式？" class="headerlink" title="什么是严格模式？"></a>什么是严格模式？</h2><blockquote>
 <p><code>严格模式</code> 是 ECMAScript 5 中引入的一种将更好的错误检查引入代码中的方法, 现在已经被大多浏览器实现. 顾名思义，这种模式使得Javascript在更严格的条件下运行.</p>
 </blockquote>
 <a id="more"></a>
@@ -271,153 +104,114 @@
 <h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>“严格模式”体现了Javascript更合理、更安全、更严谨的发展方向. 为了达到更为普遍的兼容性, 我们应该总是在严格模式下编写代码.</p>
 <h2 id="您的鼓励是作者写作最大的动力"><a href="#您的鼓励是作者写作最大的动力" class="headerlink" title="您的鼓励是作者写作最大的动力"></a>您的鼓励是作者写作最大的动力</h2><p>如果您认为本网站的文章质量不错，读后觉得收获很大，不妨小额赞助我一下，让我有动力继续写出高质量的文章：我的支付宝账号是 <code>sqrtthree@foxmail.com</code>, <a href="http://7xl8me.com1.z0.glb.clouddn.com/alipay.JPG" target="_blank" rel="external">点击查看二维码</a></p>
 
+          </div>
+          <hr>
+          <!--
+          <div class="toc-nav-button hidden-md-down" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+            <i class="fa fa-chevron-left" aria-hidden="true"></i>
+          </div>
+          -->
+          
+  <div class="ds-share " data-thread-key="strict-mode" data-title="聊聊 JS 中的严格模式" data-images="/dist/images/post-bg.jpg" data-content="什么是严格模式？
+严格模式 是 ECMAScript 5 中引入的一种将更好的错误检查引入代码中的方法, 现在已经被大多浏览器实现. 顾名思义，这种模式使得Javascript在更严格的条件下运行.
+" data-url="http://blog.sqrtthree.com/2015/10/09/strict-mode/">
+    <div class="ds-share-inline">
+      <ul  class="ds-share-icons-16">
+        <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+        <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+        <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+        <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+        <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+      </ul>
+      <div class="ds-share-icons-more">
+      </div>
+    </div>
+  </div>
+
+          
+  <hr>
+  <ul class="pager">
+    <li class="pager-prevnull">
+      
+        <a href="/2015/10/19/server-deployment-choose/" data-toggle="tooltip" data-placement="top" title="0、服务器主机选择和购买">
+          Previous<br>
+          <span>0、服务器主机选择和购买</span>
+        </a>
+      
+    </li>
+    <li class="pager-next">
+      
+        <a href="/2015/10/05/without-you-im-nothing/" data-toggle="tooltip" data-placement="top" title="春风十里 不如你">
+          Next<br>
+          <span>春风十里 不如你</span>
+        </a>
+      
+
+    </li>
+</ul>
+
+          
+  <!-- 多说评论框 start -->
+  <div class="ds-thread" data-thread-key="strict-mode" data-title="请替换成文章的标题" data-url="请替换成文章的网址"></div>
+  <!-- 多说评论框 end -->
+  <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+  <script type="text/javascript">
+  var duoshuoQuery = {short_name:"sqrtthree"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+       || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+  <!-- 多说公共JS代码 end -->
+
+        </div>
       
     </div>
-    
   </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2015/10/19/server-deployment-choose/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          0、服务器主机选择和购买
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2015/10/05/without-you-im-nothing/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">春风十里 不如你</div>
-      <strong class="article-nav-caption">></strong>
-    </a>
-  
-</nav>
-
-  
 </article>
 
 
-<div class="share-box clearfix">
-    <div class="share_jia">
-    	<!-- JiaThis Button BEGIN -->
-    	<div class="jiathis_style">
-    		<span class="jiathis_txt">Share to: &nbsp; </span>
-    		<a class="jiathis_button_facebook"></a>
-            <a class="jiathis_button_twitter"></a>
-            <a class="jiathis_button_plus"></a>
-            <a class="jiathis_button_tsina"></a>
-    		<a class="jiathis_button_cqq"></a>
-    		<a class="jiathis_button_douban"></a>
-    		<a class="jiathis_button_weixin"></a>
-    		<a class="jiathis_button_tumblr"></a>
-        <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
-    	</div>
-    	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
-    	<!-- JiaThis Button END -->
+    <footer id="footer">
+  <div class="container">
+    <div class="row">
+      <ul>
+        <li class="col-md-3">
+          <h2>友情链接</h2>
+          
+        </li>
+        <li class="col-md-3">
+          <h2>GitHub</h2>
+          
+            <div><a target="_blank " href="https://github.com/sqrthree">GitHub</a></div>
+          
+        </li>
+        <li class="col-md-3">
+          <h2>联系方式</h2>
+          
+            <div><a href="javascript:;">QQ</a> - 511249910</div>
+          
+            <div><a href="javascript:;">E-mail</a> - imsqrtthree@gmail.com</div>
+          
+        </li>
+        <li class="col-md-3">
+          <h2>内容许可</h2>
+          <div>除特别说明外，用户内容均采用 <a href="https://creativecommons.org/licenses/by-sa/3.0/cn/" target="_blank">知识共享署名-相同方式共享 3.0 中国大陆许可协议</a> 进行许可。</div>
+        </li>
+      </ul>
     </div>
-</div>
-
-
-
-
-
-
-<div class="duoshuo">
-	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="strict-mode" data-title="聊聊 JS 中的严格模式" data-url="http://blog.sqrtthree.com/2015/10/09/strict-mode/"></div>
-	<!-- 多说评论框 end -->
-	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-	<script type="text/javascript">
-	var duoshuoQuery = {short_name:"sqrtthree"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-	<!-- 多说公共JS代码 end -->
-</div>
-
-
-
-
-</div>
-      <footer id="footer">
-  <div class="outer">
-    <div id="footer-info">
-    	<div class="footer-center">
-    		&copy; 2016 sqrtthree
-    	</div>
-    </div>
+    <p class="text-md-right">
+      <strong>©2016 <a href="">根号三</a></strong>
+      <strong>Theme by <a href="http://huangxuan.me/" target="_blank">Hux</a></strong>
+      <strong>Power by <a href="https://hexo.io/" target="_blank">Hexo</a></strong>
+    </p>
   </div>
 </footer>
 
-    </div>
-    
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-
-
-<script>
-	var yiliaConfig = {
-		fancybox: true,
-		mathjax: true,
-		animate: true,
-		isHome: false,
-		isPost: true,
-		isArchive: false,
-		isTag: false,
-		isCategory: false,
-		open_in_new: false
-	}
-</script>
-<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
-<script src="/js/main.js"></script>
-
-
-
-<!-- Google Analytics -->
-<script type="text/javascript">
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-64863915-1', 'auto');
-ga('send', 'pageview');
-
-</script>
-<!-- End Google Analytics -->
-
-
-
-
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-        processEscapes: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    }
-});
-
-MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';                 
-    }       
-});
-</script>
-
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-
-
-  </div>
-</body>
+    <script type="text/javascript" src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+    <script type="text/javascript" src="/dist/js/index.min.js"></script>
+  </body>
 </html>

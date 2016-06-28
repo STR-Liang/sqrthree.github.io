@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="前端开发者, 擅长各项前端技能，深入研究移动端开发与前端性能, 对 Nodejs 后端开发略有涉及。此为博客一枚.">
+    <meta name="keyword"  content="前端 前端工程师 HTML5 CSS3 Javascript Node.js">
+		<title>
+      
+        通过 CSS 实现六边形效果 - sqrtthree
+      
+    </title>
+    <link rel="shortcut icon" href="https://assets-cdn.github.com/favicon.ico">
+    <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//cdn.staticfile.org/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/dist/styles/index.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-light navbar-fixed-top navbar-custom">
+  <div class="clearfix">
+    <button class="navbar-toggler pull-right hidden-sm-up" type="button" data-toggle="collapse" data-target="#main-nav">&#9776;</button>
+    <a class="navbar-brand hidden-sm-up" href="/">sqrtthree</a>
+  </div>
+  <div id="main-nav" class="collapse navbar-toggleable-xs in">
+    <a class="navbar-brand hidden-sm-down" href="/">sqrtthree</a>
+    <ul class="nav navbar-nav navbar-right text-uppercase hidden-sm-down">
+      
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/tags/">Tags</a>
+          </li>
+          
+      
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/categories/">categories</a>
+          </li>
+          
+      
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/about/">about</a>
+          </li>
+          
+      
+    </ul>
+  </div>
+</nav>
+
+    <header class="intro-header" style="background-image: url('/dist/images/post-bg.jpg')">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
+        
+          <div class="post-heading">
+              <div class="tags ghost-tags">
+                
+                  <a class="tag" href="/tags/#CSS" title="CSS">CSS</a>
+                
+              </div>
+              <h1>通过 CSS 实现六边形效果</h1>
+              
+                <h2 class="subheading">The hexagon by CSS</h2>
+              
+              <span class="meta">Posted by sqrtthree on Jun 27, 2016</span>
+          </div>
+        
+      </div>
+    </div>
+  </div>
+</header>
+<article>
+  <div class="container">
+    <div class="row">
+      
+        <div id="markdown-container" class="col-md-10 col-md-offset-1">
+          <div class="markdown-body">
+            <p>故事说起那是在一个冰冷幽暗的晚上，外面下着淅淅沥沥的小雨，我正在思考一个十分重要的人生问题：这个周末哪里去？是宅在家里写程序好呢，还是宅在家里写博客好呢？还是好呢？这时，桌面右下角很少抖动的 QQ 头像竟然动了起来，我多年的直觉告诉我，一定是有人要约我，尽管这件事情从来没有发生过。我去，了不得，竟然是万年隐身的女神主动联系我，女神一定是因为看了朋友圈的照片对我的身材陷入了深深的迷恋，说不定还要保养我呢，啊，想想都觉得好激动啊~</p>
+<blockquote>
+<p>“哎，在干嘛呢？” (你看，果然要约我)</p>
+<p>“没事啊，在思考人生呢”</p>
+<p>“那个，我在写一个网站，需要用 CSS 实现一个六边形效果，你能帮我写个 Demo 么？”</p>
+</blockquote>
+<p>额。。。那个，好吧，跟想象中的有点不太一样，咦，万一这是女神对我的考验呢，说不定通过了之后就，哇卡卡~</p>
+<p>用 CSS 实现一个六边形还不简单？</p>
+<p>如下图，这就是我们要实现的六边形。</p>
+<p><img src="http://7xl8me.com1.z0.glb.clouddn.com/hexagon_1.png?imageView2/1/w/256/h/256/q/100%7Cwatermark/2/text/QHNxcnR0aHJlZQ==/font/5b6u6L2v6ZuF6buR/fontsize/500/fill/I0VGRUZFRg==/dissolve/100/gravity/SouthEast/dx/10/dy/10" alt="六边形"></p>
+<p>咋一看，这货怎么能用 CSS 来实现嘛？看官别着急，我给你画两条线你就能猜到了，请看下图：</p>
+<p><img src="http://7xl8me.com1.z0.glb.clouddn.com/hexagon_2.png?imageView2/1/w/256/h/256/q/100%7Cwatermark/2/text/QHNxcnR0aHJlZQ==/font/5b6u6L2v6ZuF6buR/fontsize/500/fill/I0VGRUZFRg==/dissolve/100/gravity/SouthEast/dx/10/dy/10" alt="六边形"></p>
+<p>咦，还没看出来？那您老再看下面这张图：</p>
+<p><img src="http://7xl8me.com1.z0.glb.clouddn.com/hexagon_3.png?imageView2/1/w/256/h/256/q/100%7Cwatermark/2/text/QHNxcnR0aHJlZQ==/font/5b6u6L2v6ZuF6buR/fontsize/500/fill/I0VGRUZFRg==/dissolve/100/gravity/SouthEast/dx/10/dy/10" alt="六边形"></p>
+<p>这下能够看出来了吧，没错，思路很简单，就是利用两个三角形和一个长方形然后拼接到一块，就能做出这么一个正六边形啦~</p>
+<p>嗯？三角形怎么做？介个，等我什么时候有空了再给你娓娓道来吧（不过我想我是没空了，因为等我做完女神就要约我了~）</p>
+<p>好了，废话不多说，直接上代码~ <a href="http://codepen.io/sqrtthree/pen/jrBEbj" target="_blank" rel="external">点击查看</a></p>
+<p>然后痛痛快快的给女神发了过去，</p>
+<blockquote>
+<p>“咦，效果虽然是这个效果，但是为什么鼠标移入的触发区域不太对呢？能不能把鼠标移入的触发区域也仅限制为六边形？”</p>
+</blockquote>
+<p>嗯，这确实是这种方法的一个弊端，因为 CSS 中是没法直接做一个三角形的，所以我们利用了 <code>border</code> 的特点模拟了一个出来，但是元素本质上还是一个矩形。</p>
+<p>那么问题来了，怎样实现一个完美的六边形效果呢？</p>
+<p>哈哈，这个问题怎么能难得住我嘛，不多一会，我就做出了一个完美的六边形出来给女神发过去了，这次主要是利用了 <code>overflow: hidden</code> 和 CSS3 中的 <code>transform</code> 相关属性实现的。详细代码请 <a href="http://codepen.io/sqrtthree/pen/BzKbBb" target="_blank" rel="external">点击查看</a>。</p>
+<p>嗯，这次看来女神挺满意的~</p>
+<p>毕竟鼠标移入的触发区域也完美的限制在六边形里面了嘛~</p>
+<p>女神表达了感激之情，我们在 QQ 上轻(gan)松(ga)的聊了起来，看起来是到了该约周末一起吃饭的时候了。</p>
+<blockquote>
+<p>“啊，抱歉噢，我周末要跟男朋友一起去逛街呢”</p>
+</blockquote>
+<p>哦。</p>
+<p>呵呵哒。</p>
+<p>真是一个感(lei)人(jue)肺(bu)腑(ai)的爱情故事。</p>
+<h2 id="您的鼓励是作者写作最大的动力"><a href="#您的鼓励是作者写作最大的动力" class="headerlink" title="您的鼓励是作者写作最大的动力"></a>您的鼓励是作者写作最大的动力</h2><p>如果您认为本网站的文章质量不错，读后觉得收获很大，不妨请我喝杯咖啡，让我有动力继续写出高质量的文章：我的支付宝账号是 <code>sqrtthree@foxmail.com</code>, <a href="http://7xl8me.com1.z0.glb.clouddn.com/alipay.JPG" target="_blank" rel="external">点击查看二维码</a></p>
+
+          </div>
+          <hr>
+          <!--
+          <div class="toc-nav-button hidden-md-down" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+            <i class="fa fa-chevron-left" aria-hidden="true"></i>
+          </div>
+          -->
+          
+  <div class="ds-share " data-thread-key="The-hexagon-by-CSS" data-title="通过 CSS 实现六边形效果" data-images="/dist/images/post-bg.jpg" data-content="The hexagon by CSS" data-url="http://blog.sqrtthree.com/2016/06/27/The-hexagon-by-CSS/">
+    <div class="ds-share-inline">
+      <ul  class="ds-share-icons-16">
+        <li data-toggle="ds-share-icons-more"><a class="ds-more" href="javascript:void(0);">分享到：</a></li>
+        <li><a class="ds-weibo" href="javascript:void(0);" data-service="weibo">微博</a></li>
+        <li><a class="ds-qzone" href="javascript:void(0);" data-service="qzone">QQ空间</a></li>
+        <li><a class="ds-qqt" href="javascript:void(0);" data-service="qqt">腾讯微博</a></li>
+        <li><a class="ds-wechat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+      </ul>
+      <div class="ds-share-icons-more">
+      </div>
+    </div>
+  </div>
+
+          
+  <hr>
+  <ul class="pager">
+    <li class="pager-prev disabled">
+      
+        <a href="javascript:;">
+          Previous<br>
+          <span>已经是第一篇啦 ^_^ </span>
+        </a>
+      
+    </li>
+    <li class="pager-next">
+      
+        <a href="/2016/06/13/jQuery-3-0-Final-Released/" data-toggle="tooltip" data-placement="top" title="jQuery 3.0 终于发布啦！">
+          Next<br>
+          <span>jQuery 3.0 终于发布啦！</span>
+        </a>
+      
+
+    </li>
+</ul>
+
+          
+  <!-- 多说评论框 start -->
+  <div class="ds-thread" data-thread-key="The-hexagon-by-CSS" data-title="请替换成文章的标题" data-url="请替换成文章的网址"></div>
+  <!-- 多说评论框 end -->
+  <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+  <script type="text/javascript">
+  var duoshuoQuery = {short_name:"sqrtthree"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+       || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+    </script>
+  <!-- 多说公共JS代码 end -->
+
+        </div>
+      
+    </div>
+  </div>
+</article>
+
+
+    <footer id="footer">
+  <div class="container">
+    <div class="row">
+      <ul>
+        <li class="col-md-3">
+          <h2>友情链接</h2>
+          
+        </li>
+        <li class="col-md-3">
+          <h2>GitHub</h2>
+          
+            <div><a target="_blank " href="https://github.com/sqrthree">GitHub</a></div>
+          
+        </li>
+        <li class="col-md-3">
+          <h2>联系方式</h2>
+          
+            <div><a href="javascript:;">QQ</a> - 511249910</div>
+          
+            <div><a href="javascript:;">E-mail</a> - imsqrtthree@gmail.com</div>
+          
+        </li>
+        <li class="col-md-3">
+          <h2>内容许可</h2>
+          <div>除特别说明外，用户内容均采用 <a href="https://creativecommons.org/licenses/by-sa/3.0/cn/" target="_blank">知识共享署名-相同方式共享 3.0 中国大陆许可协议</a> 进行许可。</div>
+        </li>
+      </ul>
+    </div>
+    <p class="text-md-right">
+      <strong>©2016 <a href="">根号三</a></strong>
+      <strong>Theme by <a href="http://huangxuan.me/" target="_blank">Hux</a></strong>
+      <strong>Power by <a href="https://hexo.io/" target="_blank">Hexo</a></strong>
+    </p>
+  </div>
+</footer>
+
+    <script type="text/javascript" src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+    <script type="text/javascript" src="/dist/js/index.min.js"></script>
+  </body>
+</html>

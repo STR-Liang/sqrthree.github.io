@@ -1,967 +1,440 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>sqrtthree</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前端开发者, 擅长各项前端技能，深入研究移动端开发与前端性能, 对 Nodejs 后端开发略有涉及。此为博客一枚.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="sqrtthree">
-<meta property="og:url" content="http://blog.sqrtthree.com/index.html">
-<meta property="og:site_name" content="sqrtthree">
-<meta property="og:description" content="前端开发者, 擅长各项前端技能，深入研究移动端开发与前端性能, 对 Nodejs 后端开发略有涉及。此为博客一枚.">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="sqrtthree">
-<meta name="twitter:description" content="前端开发者, 擅长各项前端技能，深入研究移动端开发与前端性能, 对 Nodejs 后端开发略有涉及。此为博客一枚.">
-  
-    <link rel="alternative" href="/atom.xml" title="sqrtthree" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  <link rel="stylesheet" href="/css/style.css">
-</head>
-
-<body>
-  <div id="container">
-    <div class="left-col">
-    <div class="overlay"></div>
-<div class="intrude-less">
-	<header id="header" class="inner">
-		<a href="/2015/06/27/hello-world/" class="profilepic">
-			
-			<img lazy-src="/img/author.jpg" class="js-avatar">
-			
-		</a>
-
-		<hgroup>
-		  <h1 class="header-author"><a href="/2015/06/27/hello-world/">sqrtthree</a></h1>
-		</hgroup>
-
-		
-		<p class="header-subtitle">O ever youthful, O ever weeping.</p>
-		
-
-		
-			<div class="switch-btn">
-				<div class="icon">
-					<div class="icon-ctn">
-						<div class="icon-wrap icon-house" data-idx="0">
-							<div class="birdhouse"></div>
-							<div class="birdhouse_holes"></div>
-						</div>
-						<div class="icon-wrap icon-ribbon hide" data-idx="1">
-							<div class="ribbon"></div>
-						</div>
-						
-						<div class="icon-wrap icon-link hide" data-idx="2">
-							<div class="loopback_l"></div>
-							<div class="loopback_r"></div>
-						</div>
-						
-						
-						<div class="icon-wrap icon-me hide" data-idx="3">
-							<div class="user"></div>
-							<div class="shoulder"></div>
-						</div>
-						
-					</div>
-					
-				</div>
-				<div class="tips-box hide">
-					<div class="tips-arrow"></div>
-					<ul class="tips-inner">
-						<li>Menu</li>
-						<li>Tags</li>
-						
-						<li>Links</li>
-						
-						
-						<li>Über</li>
-						
-					</ul>
-				</div>
-			</div>
-		
-
-		<div class="switch-area">
-			<div class="switch-wrap">
-				<section class="switch-part switch-part1">
-					<nav class="header-menu">
-						<ul>
-						
-							<li><a href="/">主页</a></li>
-				        
-							<li><a href="/archives">所有文章</a></li>
-				        
-							<li><a href="/instagram">相册</a></li>
-				        
-						</ul>
-					</nav>
-					<nav class="header-nav">
-						<div class="social">
-							
-								<a class="github" target="_blank" href="https://github.com/sqrthree" title="github">github</a>
-					        
-								<a class="twitter" target="_blank" href="https://twitter.com/sqrtthree" title="twitter">twitter</a>
-					        
-								<a class="weibo" target="_blank" href="http://weibo.com/sqrtthree" title="weibo">weibo</a>
-					        
-								<a class="mail" target="_blank" href="mailto:sqrtthree@foxmail.com" title="mail">mail</a>
-					        
-								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
-					        
-						</div>
-					</nav>
-				</section>
-				
-				
-				<section class="switch-part switch-part2">
-					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/api/" style="font-size: 10px;">api</a> <a href="/tags/jQuery3-0/" style="font-size: 13.33px;">jQuery3.0</a> <a href="/tags/jade/" style="font-size: 16.67px;">jade</a> <a href="/tags/myCodeWars/" style="font-size: 10px;">myCodeWars</a> <a href="/tags/工具/" style="font-size: 10px;">工具</a> <a href="/tags/服务器部署/" style="font-size: 16.67px;">服务器部署</a> <a href="/tags/译文/" style="font-size: 20px;">译文</a> <a href="/tags/资源/" style="font-size: 10px;">资源</a>
-					</div>
-				</section>
-				
-				
-				
-				<section class="switch-part switch-part3">
-					<div id="js-friends">
-					
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://sqrt3.sinaapp.com/">My Web</a>
-			        
-			        </div>
-				</section>
-				
-
-				
-				
-				<section class="switch-part switch-part4">
-				
-					<div id="js-aboutme">I&#39;m a Front-End developer in everywhere, now living in ZhengZhou, China. I&#39;m ❤ programming &amp; Front-end design.<a href="/2015/06/27/hello-world/">&nbsp;&nbsp;&nbsp;Click me.</a></div>
-				</section>
-				
-			</div>
-		</div>
-	</header>				
-</div>
-
-    </div>
-    <div class="mid-col">
-      <nav id="mobile-nav">
-  	<div class="overlay">
-  		<div class="slider-trigger"></div>
-  		<h1 class="header-author js-mobile-header hide">sqrtthree</h1>
-  	</div>
-	<div class="intrude-less">
-		<header id="header" class="inner">
-			<div class="profilepic">
-			
-				<img lazy-src="/img/author.jpg" class="js-avatar">
-			
-			</div>
-			<hgroup>
-			  <h1 class="header-author">sqrtthree</h1>
-			</hgroup>
-			
-			<p class="header-subtitle">O ever youthful, O ever weeping.</p>
-			
-			<nav class="header-menu">
-				<ul>
-				
-					<li><a href="/">主页</a></li>
-		        
-					<li><a href="/archives">所有文章</a></li>
-		        
-					<li><a href="/instagram">相册</a></li>
-		        
-		        <div class="clearfix"></div>
-				</ul>
-			</nav>
-			<nav class="header-nav">
-				<div class="social">
-					
-						<a class="github" target="_blank" href="https://github.com/sqrthree" title="github">github</a>
-			        
-						<a class="twitter" target="_blank" href="https://twitter.com/sqrtthree" title="twitter">twitter</a>
-			        
-						<a class="weibo" target="_blank" href="http://weibo.com/sqrtthree" title="weibo">weibo</a>
-			        
-						<a class="mail" target="_blank" href="mailto:sqrtthree@foxmail.com" title="mail">mail</a>
-			        
-						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
-			        
-				</div>
-			</nav>
-		</header>				
-	</div>
+<html lang="zh-cmn-Hans">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="前端开发者, 擅长各项前端技能，深入研究移动端开发与前端性能, 对 Nodejs 后端开发略有涉及。此为博客一枚.">
+    <meta name="keyword"  content="前端 前端工程师 HTML5 CSS3 Javascript Node.js">
+		<title>
+      
+        sqrtthree
+      
+    </title>
+    <link rel="shortcut icon" href="https://assets-cdn.github.com/favicon.ico">
+    <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//cdn.staticfile.org/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/dist/styles/index.css">
+  </head>
+  <body>
+    <nav class="navbar navbar-light navbar-fixed-top navbar-custom">
+  <div class="clearfix">
+    <button class="navbar-toggler pull-right hidden-sm-up" type="button" data-toggle="collapse" data-target="#main-nav">&#9776;</button>
+    <a class="navbar-brand hidden-sm-up" href="/">sqrtthree</a>
+  </div>
+  <div id="main-nav" class="collapse navbar-toggleable-xs in">
+    <a class="navbar-brand hidden-sm-down" href="/">sqrtthree</a>
+    <ul class="nav navbar-nav navbar-right text-uppercase hidden-sm-down">
+      
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/tags/">Tags</a>
+          </li>
+          
+      
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/categories/">categories</a>
+          </li>
+          
+      
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/about/">about</a>
+          </li>
+          
+      
+    </ul>
+  </div>
 </nav>
 
-      <div class="body-wrap">
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-  
-    <article id="post-jQuery-3-0-Final-Released" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/06/13/jQuery-3-0-Final-Released/" class="article-date">
-  	<time datetime="2016-06-13T15:39:09.000Z" itemprop="datePublished">2016-06-13</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+    <header class="intro-header" style="background-image: url('/dist/images/home-bg.jpg')">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 col-md-offset-1">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/13/jQuery-3-0-Final-Released/">jQuery 3.0 终于发布啦！</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>jQuery 3.0 现在发布啦！这个版本从 2014 年 10 月就已经在开始开发了。我们的目标是创建一个更轻量、更快的 jQuery（带有向后兼容的思想）。我们删除了所有的兼容旧版本 IE 浏览器的解决办法，并在一些有意义的地方利用了一些较为现代的 web APIs。它是 2.x 分支的延续，但是包含了少量我们认为早该出现的改变。在一段时间内， 1.12 和 2.2 分支仍将继续获得关键性的支持补丁，但是它们不会得到任何新功能或是重大修订。jQuery 3.0 就是 jQuery 的未来。如果你需要支持 IE6-8，你可以继续使用最新的 1.12 版。</p>
-      
+          <div class="site-heading  text-xs-center">
+              <h1>sqrtthree</h1>
+              <span class="subheading">O ever youthful, O ever weeping.</span>
+          </div>
+        
+      </div>
     </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery3-0/">jQuery3.0</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/译文/">译文</a></li></ul>
-	</div>
+  </div>
+</header>
 
+<div class="container">
+  <div class="row">
+    <div class="col-md-9 main-container">
       
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/技术/">技术</a>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/06/13/jQuery-3-0-Final-Released/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
+  <div class="post-preview">
+    <a href="/2016/06/27/The-hexagon-by-CSS/">
+      <h2 class="post-title">通过 CSS 实现六边形效果</h2>
+        
+          <h3 class="post-subtitle">The hexagon by CSS</h3>
+        
+        <div class="post-content-preview"></div>
+    </a>
+    <p class="post-meta">
+        Posted by sqrtthree on Jun 27, 2016
+    </p>
   </div>
   
-</article>
-
-
-
-
-
-
-
-
-
+    <hr>
   
-    <article id="post-book-recommendations" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/04/26/book-recommendations/" class="article-date">
-  	<time datetime="2016-04-26T06:47:07.000Z" itemprop="datePublished">2016-04-26</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+
+  <div class="post-preview">
+    <a href="/2016/06/13/jQuery-3-0-Final-Released/">
+      <h2 class="post-title">jQuery 3.0 终于发布啦！</h2>
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/26/book-recommendations/">前端开发书籍推荐目录（连载ing）</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>前几天有朋友说他们公司要做一个培训计划，让我给推荐几本关于前端方面的书籍，拖延了四五天之后，终于还是耐着性子把它写完了，这里也一并发出来，希望能够给那些在自学道路上艰难前行的人带来一点光亮和温暖。</p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/资源/">资源</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/技术/">技术</a>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/04/26/book-recommendations/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
+        <div class="post-content-preview">jQuery 3.0 现在发布啦！这个版本从 2014 年 10 月就已经在开始开发了。我们的目标是创建一个更轻量、更快的 jQuery（带有向后兼容的思想）。我们删除了所有的兼容旧版本 IE 浏览器的解决办法，并在一些有意义的地方利用了一些较为现代的 web APIs。它是 2.x 分支的延续，但是包含了少量我们认为早该出现的改变。在一段时间内， 1.12 和 2.2 分支仍将继续获得关键...</div>
+    </a>
+    <p class="post-meta">
+        Posted by sqrtthree on Jun 13, 2016
+    </p>
   </div>
   
-</article>
-
-
-
-
-
-
-
-
-
+    <hr>
   
-    <article id="post-debugging-nodejs-in-chrome-devtools" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/02/29/debugging-nodejs-in-chrome-devtools/" class="article-date">
-  	<time datetime="2016-02-29T03:52:37.000Z" itemprop="datePublished">2016-02-29</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+
+  <div class="post-preview">
+    <a href="/2016/04/26/book-recommendations/">
+      <h2 class="post-title">前端开发书籍推荐目录（连载ing）</h2>
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/29/debugging-nodejs-in-chrome-devtools/">在 Chrome 开发者工具中调试 node.js</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<ul>
-<li>原文链接 : <a href="http://mattdesl.svbtle.com/debugging-nodejs-in-chrome-devtools">Debugging Node.js in Chrome DevTools</a></li>
-<li>原文作者 : <a href="http://mattdesl.svbtle.com/">MATT DESLAURIERS</a></li>
-<li>译文出自 : <a href="https://github.com/xitu/gold-miner">掘金翻译计划</a></li>
-<li>译者 : <a href="https://github.com/sqrthree">sqrthree (根号三)</a></li>
-<li>校对者: <a href="https://github.com/shenxn">shenxn</a>、<a href="https://github.com/CoderBOBO">CoderBOBO</a></li>
-</ul>
-</blockquote>
-<p>这篇文章介绍了一种在 Chrome 开发者工具里面开发、调试和分析 Node.js 应用程序的新方法。</p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/译文/">译文</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/技术/">技术</a>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/02/29/debugging-nodejs-in-chrome-devtools/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
+        <div class="post-content-preview">前几天有朋友说他们公司要做一个培训计划，让我给推荐几本关于前端方面的书籍，拖延了四五天之后，终于还是耐着性子把它写完了，这里也一并发出来，希望能够给那些在自学道路上艰难前行的人带来一点光亮和温暖。</div>
+    </a>
+    <p class="post-meta">
+        Posted by sqrtthree on Apr 26, 2016
+    </p>
   </div>
   
-</article>
-
-
-
-
-
-
-
-
-
+    <hr>
   
-    <article id="post-gitbook" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/02/23/gitbook/" class="article-date">
-  	<time datetime="2016-02-23T14:40:01.000Z" itemprop="datePublished">2016-02-23</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+
+  <div class="post-preview">
+    <a href="/2016/02/29/debugging-nodejs-in-chrome-devtools/">
+      <h2 class="post-title">在 Chrome 开发者工具中调试 node.js</h2>
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/23/gitbook/">GitBook 简明教程</a>
-    </h1>
-  
+        <div class="post-content-preview">
 
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>Modern book format and toolchain using Git and Markdown</p>
-</blockquote>
-<p>这是 GitBook 项目主页上对 GitBook 的定义。</p>
-<p>GitBook 是一个命令行工具。通过它，你能够使用 Git 和 Markdown 来编排书本。并且通过工具可以自动生成相应的 HTML、PDF 和 epub 格式的文件。</p>
-<p>总之，就是好用，好使，加好看。</p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/工具/">工具</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/技术/">技术</a>
-	</div>
+原文链接 : Debugging Node.js in Chrome DevTools
+原文作者 : MATT DESLAURIERS
+译文出自 : 掘金翻译计划
+译者 : sqrthree (根号三)
+校对者: shenxn、CoderBOBO
 
 
-      
-        <p class="article-more-link">
-          <a  href="/2016/02/23/gitbook/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
+这篇文章介绍了一种在 Chrome 开发者工具里面开发、调试和分析 Node.js 应用程序的新方法。</div>
+    </a>
+    <p class="post-meta">
+        Posted by sqrtthree on Feb 29, 2016
+    </p>
   </div>
   
-</article>
-
-
-
-
-
-
-
-
-
+    <hr>
   
-    <article id="post-implicit-type-conversion" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/01/23/implicit-type-conversion/" class="article-date">
-  	<time datetime="2016-01-22T17:53:21.000Z" itemprop="datePublished">2016-01-23</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+
+  <div class="post-preview">
+    <a href="/2016/02/23/gitbook/">
+      <h2 class="post-title">GitBook 简明教程</h2>
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/01/23/implicit-type-conversion/">聊一聊 JS 中的『隐式类型转换』</a>
-    </h1>
-  
+        <div class="post-content-preview">
+Modern book format and toolchain using Git and Markdown
 
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>类型转换还不行？还非得隐式？这是什么高级玩意？</p>
-<p>废话不多说，我们先上一盘🌰，额，不对，先看一个例子吧。</p>
-<figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">3 </span>+ true</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/技术/">技术</a>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/01/23/implicit-type-conversion/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
+这是 GitBook 项目主页上对 GitBook 的定义。
+GitBook 是一个命令行工具。通过它，你能够使用 Git 和 Markdown 来编排书本。并且通过工具可以自动生成相应的 HTML、PDF 和 epub 格式的文件。
+总之，就是好用，好使，加好看。</div>
+    </a>
+    <p class="post-meta">
+        Posted by sqrtthree on Feb 23, 2016
+    </p>
   </div>
   
-</article>
-
-
-
-
-
-
-
-
-
+    <hr>
   
-    <article id="post-javascript-developer-survey-results" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/12/26/javascript-developer-survey-results/" class="article-date">
-  	<time datetime="2015-12-26T10:41:10.000Z" itemprop="datePublished">2015-12-26</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+
+  <div class="post-preview">
+    <a href="/2016/01/23/implicit-type-conversion/">
+      <h2 class="post-title">聊一聊 JS 中的『隐式类型转换』</h2>
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/12/26/javascript-developer-survey-results/">JavaScript 开发者年度调查报告</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<ul>
-<li>原文链接 : <a href="https://ponyfoo.com/articles/javascript-developer-survey-results">JavaScript Developer Survey Results</a></li>
-<li>原文作者 : <a href="https://ponyfoo.com/">ponyfoo</a></li>
-<li>译文出自 : <a href="https://github.com/xitu/gold-miner">掘金翻译计划</a></li>
-<li>译者 : <a href="https://github.com/sqrthree">sqrthree(根号三)</a></li>
-<li>校对者: <a href="https://github.com/Zhangdroid">Zhangdroid</a></li>
-</ul>
-</blockquote>
-<p>There were over 5000 responses, 5350 to be exact, and I can’t wait to share the details. Before that I want to thank everyone who chipped in. This is a great time to be a part of the JavaScript community, and I’m truly excited for things to come!</p>
-<p>截止目前有超过了 5000 人参与了(该次调查)，准确的说是 5350 人。我迫不及待的想要和大家分享一下这次调查的细节。在分享之前我想要感谢参与调查的每一个人。这是 Javascript 社区一个伟大的时刻，我对未来的事情感到无比激动。</p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/译文/">译文</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/技术/">技术</a>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a  href="/2015/12/26/javascript-developer-survey-results/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
+        <div class="post-content-preview">类型转换还不行？还非得隐式？这是什么高级玩意？
+废话不多说，我们先上一盘🌰，额，不对，先看一个例子吧。
+13 + true</div>
+    </a>
+    <p class="post-meta">
+        Posted by sqrtthree on Jan 23, 2016
+    </p>
   </div>
   
-</article>
-
-
-
-
-
-
-
-
-
+    <hr>
   
-    <article id="post-fecs" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/12/25/fecs/" class="article-date">
-  	<time datetime="2015-12-25T07:33:04.000Z" itemprop="datePublished">2015-12-25</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+
+  <div class="post-preview">
+    <a href="/2015/12/26/javascript-developer-survey-results/">
+      <h2 class="post-title">JavaScript 开发者年度调查报告</h2>
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/12/25/fecs/">前端代码风格检查套件 FECS</a>
-    </h1>
-  
+        <div class="post-content-preview">
 
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>All code in any code-base should look like a single person typed it, no matter how many people contributed. — idiomatic.js<br>在任一个代码库中，不管是多少人协同开发，所有的代码都应该看起来像是一个人写的。- idiomatic.js</p>
-</blockquote>
-<p>This means strictly enforcing these agreed upon guidelines at all times. </p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/技术/">技术</a>
-	</div>
+原文链接 : JavaScript Developer Survey Results
+原文作者 : ponyfoo
+译文出自 : 掘金翻译计划
+译者 : sqrthree(根号三)
+校对者: Zhangdroid
 
 
-      
-        <p class="article-more-link">
-          <a  href="/2015/12/25/fecs/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
+There were over 5000 responses, 5350 to be exact, and I can’t wait to share the detail...</div>
+    </a>
+    <p class="post-meta">
+        Posted by sqrtthree on Dec 26, 2015
+    </p>
   </div>
   
-</article>
-
-
-
-
-
-
-
-
-
+    <hr>
   
-    <article id="post-jQuery3-0-Alpha-Versions-Released" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/11/12/jQuery3-0-Alpha-Versions-Released/" class="article-date">
-  	<time datetime="2015-11-11T16:14:23.000Z" itemprop="datePublished">2015-11-12</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+
+  <div class="post-preview">
+    <a href="/2015/12/25/fecs/">
+      <h2 class="post-title">前端代码风格检查套件 FECS</h2>
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/11/12/jQuery3-0-Alpha-Versions-Released/">jQuery 3.0 以及兼容版的 Alpha 版本发布</a>
-    </h1>
-  
+        <div class="post-content-preview">
+All code in any code-base should look like a single person typed it, no matter how many people contributed. — idiomatic.js在任一个代码库中，不管是多少人协同开发，所有的代码都应该看起来像是一个人写的。- idiomatic.js
 
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>It’s been a long time since we did a major release, and you certainly deserve one. So we’re glad to announce the first alpha of jQuery 3.0!</p>
-<p>从我们做出上一个重大的版本发布已经过去很长时间了，所以你理应再得到一个新版本。因此我们非常高兴的宣布 <code>jQuery 3.0</code> 的第一个 <code>alpha</code> 版本的发布。</p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery3-0/">jQuery3.0</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/译文/">译文</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/技术/">技术</a>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a  href="/2015/11/12/jQuery3-0-Alpha-Versions-Released/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
+This means strictly...</div>
+    </a>
+    <p class="post-meta">
+        Posted by sqrtthree on Dec 25, 2015
+    </p>
   </div>
   
-</article>
-
-
-
-
-
-
-
-
-
+    <hr>
   
-    <article id="post-myCodeWars-01" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/11/06/myCodeWars-01/" class="article-date">
-  	<time datetime="2015-11-06T02:04:46.000Z" itemprop="datePublished">2015-11-06</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+
+  <div class="post-preview">
+    <a href="/2015/11/12/jQuery3-0-Alpha-Versions-Released/">
+      <h2 class="post-title">jQuery 3.0 以及兼容版的 Alpha 版本发布</h2>
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/11/06/myCodeWars-01/">My Code Wars v0.1</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>这里讲述的是一个8级（kyu）菜鸟立志成为8段（dan）大神的故事。故事的起因是这样的。菜鸟有幸发现了<a href="http://www.codewars.com/" title="codewars">codewars</a>这个网站，从此沉迷于内一发不可收拾，他在代码战争中一次次遭遇挫败，又一次次爬起来继续跌倒下去。欲知详情，且看『迈向7级的第一个脚印』。</p>
-<p>遥想当年自高自大，而今终知天外有天。</p>
-</blockquote>
-<h3 id="Description"><a href="#Description" class="headerlink" title="Description:"></a>Description:</h3><p>The numberOfOccurrences function must return the number of occurrences of an element in an array.</p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/myCodeWars/">myCodeWars</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/技术/">技术</a>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a  href="/2015/11/06/myCodeWars-01/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
+        <div class="post-content-preview">It’s been a long time since we did a major release, and you certainly deserve one. So we’re glad to announce the first alpha of jQuery 3.0!
+从我们做出上一个重大的版本发布已经过去很长时间了，所以你理应再得到一个新版本。因此我们非常高兴的宣布 jQuery...</div>
+    </a>
+    <p class="post-meta">
+        Posted by sqrtthree on Nov 12, 2015
+    </p>
   </div>
   
-</article>
-
-
-
-
-
-
-
-
-
+    <hr>
   
-    <article id="post-jquery3-the-next-generations" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/11/05/jquery3-the-next-generations/" class="article-date">
-  	<time datetime="2015-11-05T03:42:00.000Z" itemprop="datePublished">2015-11-05</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+
+  <div class="post-preview">
+    <a href="/2015/11/06/myCodeWars-01/">
+      <h2 class="post-title">My Code Wars v0.1</h2>
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/11/05/jquery3-the-next-generations/">jQuery 3.0——下一代的jQuery</a>
-    </h1>
-  
+        <div class="post-content-preview">
+这里讲述的是一个8级（kyu）菜鸟立志成为8段（dan）大神的故事。故事的起因是这样的。菜鸟有幸发现了codewars这个网站，从此沉迷于内一发不可收拾，他在代码战争中一次次遭遇挫败，又一次次爬起来继续跌倒下去。欲知详情，且看『迈向7级的第一个脚印』。
+遥想当年自高自大，而今终知天外有天。
 
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>2014年10月29日，jQuery 官方博客上更新了一篇博文，描述了关于下一代 jQuery 的一些信息。实际上这篇博文至今都已经一年时间了，jQuery 官方团队也早在2015年7月13日发布了 <code>jQuery 3.0.0-alpha1</code> 版本。我之前也只是匆匆的看过一遍，今日闲着无事，就尝试翻译了一下并发布了这篇迟到了一年的译版，想要了解 <code>3.0</code> 中的新特性的话可以关注我后续的更新。</p>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery3-0/">jQuery3.0</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/译文/">译文</a></li></ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/技术/">技术</a>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a  href="/2015/11/05/jquery3-the-next-generations/#more">more >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
+Description:The numberOfOccurrences function must...</div>
+    </a>
+    <p class="post-meta">
+        Posted by sqrtthree on Nov 6, 2015
+    </p>
   </div>
   
-</article>
-
-
-
-
-
-
-
 
 
   
-  
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
-    </nav>
-  
+  <nav>
+    <ul class="pagination">
+      <li class="page-item disabled">
+        <a class="page-link" href="javascript:;" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+          <span class="sr-only">Previous</span>
+        </a>
+      </li>
 
+      
+        
+           <li class="page-item active">
+    <a class="page-link" href="
+      
+        javascript:;
+      
+    ">
+      1
+    </a>
+  </li>
+        
+           <li class="page-item ">
+    <a class="page-link" href="
+      
+        /page/2/
+      
+    ">
+      2
+    </a>
+  </li>
+        
+           <li class="page-item ">
+    <a class="page-link" href="
+      
+        /page/3/
+      
+    ">
+      3
+    </a>
+  </li>
+        
+      
+
+      <li class="page-item "">
+        <a class="page-link" href="/page/2/" aria-label="Next">
+          <span aria-hidden="true">&raquo;</span>
+          <span class="sr-only">Next</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+
+
+    </div>
+    <div class="col-md-3 sidebar-container">
+      <section>
+        <h5><a href="/tags/">FEATURED TAGS</a></h5>
+        <div class="tags ghost-tags">
+          
+            <a href="/tags/#myCodeWars" title="myCodeWars">myCodeWars</a>
+          
+            <a href="/tags/#gulp" title="gulp">gulp</a>
+          
+            <a href="/tags/#译文" title="译文">译文</a>
+          
+            <a href="/tags/#CSS" title="CSS">CSS</a>
+          
+            <a href="/tags/#api" title="api">api</a>
+          
+            <a href="/tags/#资源" title="资源">资源</a>
+          
+            <a href="/tags/#工具" title="工具">工具</a>
+          
+            <a href="/tags/#jade" title="jade">jade</a>
+          
+            <a href="/tags/#jQuery3.0" title="jQuery3.0">jQuery3.0</a>
+          
+            <a href="/tags/#服务器部署" title="服务器部署">服务器部署</a>
+          
+        </div>
+      </section>
+      <section class="visible-md visible-lg">
+        <hr>
+        <h5><a href="/about/">ABOUT ME</a></h5>
+        <div class="short-about">
+          <img class="avatar img-rounded" src="/dist/images/avatar.jpg">
+          <p>O ever youthful, O ever weeping.</p>
+          <!-- SNS Link -->
+          
+            <ul class="list-inline">
+              
+                
+                  <li class="list-inline-item">
+                    <a target="_blank" href="https://github.com/sqrthree">
+                      <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                      </span>
+                    </a>
+                  </li>
+                
+              
+                
+                  <li class="list-inline-item">
+                    <a target="_blank" href="https://twitter.com/sqrtthree">
+                      <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                      </span>
+                    </a>
+                  </li>
+                
+              
+                
+                  <li class="list-inline-item">
+                    <a target="_blank" href="http://weibo.com/sqrtthree">
+                      <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                      </span>
+                    </a>
+                  </li>
+                
+              
+                
+                  <li class="list-inline-item">
+                    <a target="_blank" href="">
+                      <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa  fa-stack-1x fa-inverse">知</i>
+                      </span>
+                    </a>
+                  </li>
+                
+              
+                
+                  <li class="list-inline-item">
+                    <a target="_blank" href="mailto:sqrtthree@foxmail.com">
+                      <span class="fa-stack fa-lg">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-envelope-o fa-stack-1x fa-inverse"></i>
+                      </span>
+                    </a>
+                  </li>
+                
+              
+          </ul>
+          
+        </div>
+      </section>
+      
+    </div>
+  </div>
 </div>
-      <footer id="footer">
-  <div class="outer">
-    <div id="footer-info">
-    	<div class="footer-center">
-    		&copy; 2016 sqrtthree
-    	</div>
+
+    <footer id="footer">
+  <div class="container">
+    <div class="row">
+      <ul>
+        <li class="col-md-3">
+          <h2>友情链接</h2>
+          
+        </li>
+        <li class="col-md-3">
+          <h2>GitHub</h2>
+          
+            <div><a target="_blank " href="https://github.com/sqrthree">GitHub</a></div>
+          
+        </li>
+        <li class="col-md-3">
+          <h2>联系方式</h2>
+          
+            <div><a href="javascript:;">QQ</a> - 511249910</div>
+          
+            <div><a href="javascript:;">E-mail</a> - imsqrtthree@gmail.com</div>
+          
+        </li>
+        <li class="col-md-3">
+          <h2>内容许可</h2>
+          <div>除特别说明外，用户内容均采用 <a href="https://creativecommons.org/licenses/by-sa/3.0/cn/" target="_blank">知识共享署名-相同方式共享 3.0 中国大陆许可协议</a> 进行许可。</div>
+        </li>
+      </ul>
     </div>
+    <p class="text-md-right">
+      <strong>©2016 <a href="">根号三</a></strong>
+      <strong>Theme by <a href="http://huangxuan.me/" target="_blank">Hux</a></strong>
+      <strong>Power by <a href="https://hexo.io/" target="_blank">Hexo</a></strong>
+    </p>
   </div>
 </footer>
 
-    </div>
-    
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-
-
-<script>
-	var yiliaConfig = {
-		fancybox: true,
-		mathjax: true,
-		animate: true,
-		isHome: true,
-		isPost: false,
-		isArchive: false,
-		isTag: false,
-		isCategory: false,
-		open_in_new: false
-	}
-</script>
-<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
-<script src="/js/main.js"></script>
-
-
-
-<!-- Google Analytics -->
-<script type="text/javascript">
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-64863915-1', 'auto');
-ga('send', 'pageview');
-
-</script>
-<!-- End Google Analytics -->
-
-
-
-
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-        processEscapes: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    }
-});
-
-MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';                 
-    }       
-});
-</script>
-
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-
-
-  </div>
-</body>
+    <script type="text/javascript" src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+    <script type="text/javascript" src="/dist/js/index.min.js"></script>
+  </body>
 </html>
