@@ -28,13 +28,13 @@
       
           
           <li class="nav-item">
-            <a class="nav-link" href="/tags/">Tags</a>
+            <a class="nav-link" href="/categories/">categories</a>
           </li>
           
       
           
           <li class="nav-item">
-            <a class="nav-link" href="/categories/">categories</a>
+            <a class="nav-link" href="/tags/">Tags</a>
           </li>
           
       
@@ -110,24 +110,24 @@
 <p>Example: async vs sync</p>
 <figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var <span class="keyword">deferred</span> = jQuery.<span class="keyword">Deferred</span>();</span><br><span class="line"><span class="keyword">deferred</span>.resolve();</span><br><span class="line"><span class="keyword">deferred</span>.<span class="keyword">then</span>(<span class="function"><span class="keyword">function</span><span class="params">()</span></span> &#123;</span><br><span class="line">  console.<span class="built_in">log</span>(<span class="string">"success callback"</span>);</span><br><span class="line">&#125;);</span><br><span class="line">console.<span class="built_in">log</span>(<span class="string">"after binding"</span>);</span><br></pre></td></tr></table></figure>
 <p>在以前，这段代码会先打印 “success callback” 然后打印 “after binding”。现在，它的结果是先打印 “after binding” 然后打印 “success callback”。</p>
-<p>Important: while caught exceptions had advantages for in-browser debugging, it is far more declarative (i.e. explicit) to handle them with rejection callbacks. Keep in mind that this places the responsibility on you to always add at least one rejection callback when working with promises. Otherwise, some errors might go unnoticed.</p>
-<p>We’ve built a plugin to help in debugging Promises/A+ compatible Deferreds. If you are not seeing enough information about an error on the console to determine its source, check out the <a href="https://github.com/dmethvin/jquery-deferred-reporter" target="_blank" rel="external">jQuery Deferred Reporter Plugin</a>.</p>
-<p><code>jQuery.when</code> has also been updated to accept any thenable object, which includes native Promise objects.</p>
+<p>重要：当捕获异常时有利于在浏览器中进行调试，通过拒绝回调函数来处理异常非常具有陈述性。当与promises打交道时，记住至少要增加一个拒绝回调函数。否则，任何错误都不会提示。</p>
+<p>我们写了一个插件用来调试 Deferreds 的 Promises/A+ 兼容性。如果在控制台无法看到错误的详细信息和来源，可查阅这里 <a href="https://github.com/dmethvin/jquery-deferred-reporter" target="_blank" rel="external">jQuery Deferred Reporter Plugin</a>.</p>
+<p><code>jQuery.when</code> 升级后可以接受所有thenable 对象，包括原生的 Promise 对象。</p>
 <p><a href="https://github.com/jquery/jquery/issues/1722" target="_blank" rel="external">https://github.com/jquery/jquery/issues/1722</a><br><a href="https://github.com/jquery/jquery/issues/2102" target="_blank" rel="external">https://github.com/jquery/jquery/issues/2102</a></p>
-<h5 id="Added-catch-to-Deferreds"><a href="#Added-catch-to-Deferreds" class="headerlink" title="Added .catch() to Deferreds"></a>Added .catch() to Deferreds</h5><p>The <code>catch()</code> method was added to promise objects as an alias for <code>.then(null, fn)</code>.</p>
+<h5 id="为-Deferreds-添加-catch"><a href="#为-Deferreds-添加-catch" class="headerlink" title="为 Deferreds 添加 .catch()"></a>为 Deferreds 添加 .catch()</h5><p><code>catch()</code> 方法在promise 对象中的别名是 <code>.then(null, fn)</code>。</p>
 <p><a href="https://github.com/jquery/jquery/issues/2102" target="_blank" rel="external">https://github.com/jquery/jquery/issues/2102</a></p>
-<h5 id="Error-cases-don’t-silently-fail"><a href="#Error-cases-don’t-silently-fail" class="headerlink" title="Error cases don’t silently fail"></a>Error cases don’t silently fail</h5><p>Perhaps in a profound moment you’ve wondered, “What is the offset of a window?” Then you probably realized that is a crazy question – how can a window even have an offset?</p>
-<p>In the past, jQuery has sometimes tried to make cases like this return something rather than having them throw errors. In this particular case of asking for the offset of a window, the answer up to now has been { top: 0, left: 0 } With jQuery 3.0, such cases will throw errors so that crazy requests aren’t silently ignored. Please try out this release and see if there is any code out there depending on jQuery to mask problems with invalid inputs.</p>
+<h5 id="错误情况不静默失败"><a href="#错误情况不静默失败" class="headerlink" title="错误情况不静默失败"></a>错误情况不静默失败</h5><p>也许在夜深人静的时候，你突然会想 “window 的 offset 是多少？”，然后你意识到这是一个疯狂的问题 ——  window 哪来的 offset？</p>
+<p>在过去，jQuery 也尝试过去返回某些东西而不是抛出异常。在这个 window 的 offset 问题的例子里，直到现在，答案一直是 <code>{ top: 0, left: 0 }</code>，在 jQuery 3.0 中，这种情况下，如此疯狂的问题会抛出错误而不是被默默的忽略了。请在这个版本里试试看，那些依赖于 jQuery 的代码是否因为非法输入而抛出错误。</p>
 <p><a href="https://github.com/jquery/jquery/issues/1784" target="_blank" rel="external">https://github.com/jquery/jquery/issues/1784</a></p>
-<h5 id="Removed-deprecated-event-aliases"><a href="#Removed-deprecated-event-aliases" class="headerlink" title="Removed deprecated event aliases"></a>Removed deprecated event aliases</h5><p><code>.load</code>, <code>.unload</code>, and <code>.error</code>, deprecated since jQuery 1.8, are no more. Use <code>.on()</code> to register listeners.</p>
+<h5 id="删除弃用的事件别名"><a href="#删除弃用的事件别名" class="headerlink" title="删除弃用的事件别名"></a>删除弃用的事件别名</h5><p><code>.load</code>, <code>.unload</code>, 和 <code>.error</code>, 在 jQuery 1.8 后被废弃，使用 <code>.on()</code> 来注册监听器。</p>
 <p><a href="https://github.com/jquery/jquery/issues/2286" target="_blank" rel="external">https://github.com/jquery/jquery/issues/2286</a></p>
-<h5 id="Animations-now-use-requestAnimationFrame"><a href="#Animations-now-use-requestAnimationFrame" class="headerlink" title="Animations now use requestAnimationFrame"></a>Animations now use <code>requestAnimationFrame</code></h5><p>On platforms that support the <code>requestAnimationFrame</code> API, which is pretty much everywhere but IE9 and Android&lt;4.4, jQuery will now use that API when performing animations. This should result in animations that are smoother and use less CPU time – and save battery as well on mobile devices.</p>
-<p>jQuery tried using <code>requestAnimationFrame</code> a few years back but there were <a href="http://blog.jquery.com/2011/09/01/jquery-1-6-3-released/" target="_blank" rel="external">serious compatibility issues</a> with existing code so we had to back it out. We think we’ve beaten most of those issues by suspending animations while a browser tab is out of view. Still, any code that depends on animations to always run in nearly real-time is making an unrealistic assumption.</p>
-<h5 id="Massive-speedups-for-some-jQuery-custom-selectors"><a href="#Massive-speedups-for-some-jQuery-custom-selectors" class="headerlink" title="Massive speedups for some jQuery custom selectors"></a>Massive speedups for some jQuery custom selectors</h5><p>Thanks to some detective work by Paul Irish at Google, we identified some cases where we could skip a bunch of extra work when custom selectors like <code>:visible</code> are used many times in the same document. That particular case is up to 17 times faster now!</p>
-<p>Keep in mind that even with this improvement, selectors like <code>:visible</code> and <code>:hidden</code> can be expensive because they depend on the browser to determine whether elements are actually displaying on the page. That may require, in the worst case, a complete recalculation of CSS styles and page layout! While we don’t discourage their use in most cases, we recommend testing your pages to determine if these selectors are causing performance issues.</p>
-<p>This change actually made it into 1.12/2.2, but we wanted to reiterate it for jQuery 3.0.</p>
+<h5 id="动画现在使用-requestAnimationFrame"><a href="#动画现在使用-requestAnimationFrame" class="headerlink" title="动画现在使用 requestAnimationFrame"></a>动画现在使用 <code>requestAnimationFrame</code></h5><p>在支持 <code>requestAnimationFrame</code> API 的平台上，除 IE9 和 Android 4.4 外，几乎被广泛支持。jQuery 现在也将使用这个 API 来处理动画。这将让动画更加顺滑、更少的 cpu 消耗，在移动端也将更省电。</p>
+<p>jQuery在几年前曾尝试使用 <code>requestAnimationFrame</code>。但现存代码有有几个 <a href="http://blog.jquery.com/2011/09/01/jquery-1-6-3-released/" target="_blank" rel="external">严重的兼容性问题</a> 不得不推迟。我们认为通过在浏览器选显卡显示的时候暂定动画处理好了大部分问题，但是，所有依赖动画的代码想要实时执行是不切合实际的。</p>
+<h5 id="jQuery自定义选择器的大提速"><a href="#jQuery自定义选择器的大提速" class="headerlink" title="jQuery自定义选择器的大提速"></a>jQuery自定义选择器的大提速</h5><p>感谢来自谷歌的 Paul Irish 的检测工作，我们发现当 <code>:visible</code> 这种的自定义选择器在同一份文件中被多次执行时，大量额外的运算可以省略跳过。现在这一类的运算速度提升了 17 倍！</p>
+<p>要记住的是，尽管有了这些改进，但像 <code>:visible</code> 和 <code>:hidden</code> 这类选择器耗时代价还是很高的，因为依赖浏览器上的元素是否已经展示出来。在最坏的情况下，这可能需要在完全重算 CSS 样式和页面布局后才能执行。大部分情况我们不能阻止你去使用它，但我们建议你可以测试一下你的页面，看看这些选择器是否造成了性能问题。</p>
+<p>这些改动其实在1.12/2.2就已经完成了，但是我们还是想在jQuery 3.0里重申一次。</p>
 <p><a href="https://github.com/jquery/jquery/issues/2042" target="_blank" rel="external">https://github.com/jquery/jquery/issues/2042</a></p>
-<p>As mentioned above, the <a href="http://jquery.com/upgrade-guide/3.0/" target="_blank" rel="external">Upgrade Guide</a> is now available for anyone ready to try out this release. Aside from being helpful in upgrading, it also lists more of the notable changes.</p>
+<p>如上面提到的，<a href="http://jquery.com/upgrade-guide/3.0/" target="_blank" rel="external">升级指南</a> 已为各位备好，除了有助于升级，还列出了更多显著的变化。</p>
 <blockquote>
 <p>本文根据 <a href="http://blog.jquery.com/author/timmywil/" target="_blank" rel="external">Timmy Willison</a> 的《jQuery 3.0 Final Released!》所译，整个译文带有自己的理解与思想，如果译得不好或有不对之处还请同行朋友指点。如需转载此译文，需注明英文出处：<a href="http://blog.jquery.com/2016/06/09/jquery-3-0-final-released/" target="_blank" rel="external">http://blog.jquery.com/2016/06/09/jquery-3-0-final-released/</a></p>
 </blockquote>

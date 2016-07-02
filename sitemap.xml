@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.sqrtthree.com/2016/06/13/jQuery-3-0-Final-Released/</loc>
+    
+    <lastmod>2016-07-02T16:57:26.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.sqrtthree.com/2016/06/27/The-hexagon-by-CSS/</loc>
     
     <lastmod>2016-06-27T15:54:51.000Z</lastmod>
@@ -19,13 +26,6 @@
     <loc>http://blog.sqrtthree.com/tags/index.html</loc>
     
     <lastmod>2016-06-24T14:42:52.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.sqrtthree.com/2016/06/13/jQuery-3-0-Final-Released/</loc>
-    
-    <lastmod>2016-06-14T14:46:26.000Z</lastmod>
     
   </url>
   
